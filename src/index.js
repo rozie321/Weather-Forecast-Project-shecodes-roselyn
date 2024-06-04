@@ -18,6 +18,9 @@ function refreshWeather(response){
     humidityElement.innerHTML=`${response.data.temperature.humidity}% `;
     windSpeedElement.innerHTML=`${response.data.wind.speed}km/h `;
 
+    getForecast(response.data.city);
+
+
 
 }
 
@@ -72,7 +75,6 @@ let searchFormElement= document.querySelector("#search-form");
 searchFormElement.addEventListener("submit",HandleSearchSubmit);
 
 searchCity("Paris");
-getForecast("Paris");
 
 function formatDate(date) {
     let minutes = date.getMinutes();
